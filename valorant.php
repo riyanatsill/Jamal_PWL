@@ -159,7 +159,6 @@
                         <input type="radio" name="pay" value="gopay" id="b" onclick="gopay()">
                     </div>
                 </div>
-<!--                <a class="navbar-brand" href="logout.php"  ><Button class="col-12 btn btn-danger" >Logout</Button></a>-->
                 <button type="submit" class="input-submit" onclick="return  confirm('Yakin Ingin Melakukan Submit ?')">submit</button>
             </div>
         </div>
@@ -167,7 +166,7 @@
 </form>
 
 
-<!--<script src="public/assets/backend/myscripts.js"></script>-->
+<script src="myscripts.js"></script>
 <footer>
     <div class="contact">
         <h1>SOCIAL MEDIA</h1>

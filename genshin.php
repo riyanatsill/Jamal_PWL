@@ -1,30 +1,26 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['username'])){
-        $_SESSION['msg'] = 'anda harus login';
-        header('Location: login.php');
-    }
-    require "config.php";
+session_start();
+if (!isset($_SESSION['username'])){
+    $_SESSION['msg'] = 'anda harus login';
+    header('Location: login.php');
+}
+require "config.php";
 
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        $uname = $_POST['nama'];
-        $uid = $_POST['uid'];
-        $item = $_POST['Product'];
-        $payment = $_POST['pay'];
-        $jumlah = '1';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $ign = $_POST['nama'];
+    $uid = $_POST['uid'];
+    $item = $_POST['Product'];
+    $payment = $_POST['pay'];
+    $jumlah = '1';
+    $uname = $_SESSION['username'];
 
-        $sql = "INSERT INTO transaksi SET 
-                username = '$uname',
-                uid = '$uid',
-                item = '$item',
-                payment = '$payment',
-                jumlah = '$jumlah'";
-        $query = mysqli_query($con, $sql);
+    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+    $query = mysqli_query($con, $sql);
 
-        if ($query) header("location:success.php");
+    if ($query) header("location:success.php");
 
-        echo "Something Went Wrong On The Create";
-    }
+    echo "Something Went Wrong On The Create";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,28 +76,28 @@
                             <img src="images/gc.png">
                             <p>250GC 20k</p>
                         </label>
-                        <input type="radio" name="Product" value="250 Genesis Crystal" id="x" onclick="clkvp()" required>
+                        <input type="radio" name="Product" value="9" id="x" onclick="clkvp()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vps" >
                         <label for="x">
                             <img src="images/gc.png">
                             <p>500GC 50k</p>
                         </label>
-                        <input type="radio" name="Product" value="500 Genesis Crystal" id="x" onclick="clkvp1()" required>
+                        <input type="radio" name="Product" value="10" id="x" onclick="clkvp1()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vpy" >
                         <label for="x">
                             <img src="images/gc.png">
                             <p>1000GC 150k</p>
                         </label>
-                        <input type="radio" name="Product" value="1000 Genesis Crystal" id="x" onclick="clkvp2()">
+                        <input type="radio" name="Product" value="11" id="x" onclick="clkvp2()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz" >
                         <label for="x">
                             <img src="images/gc.png">
                             <p>1200GC 200k</p>
                         </label>
-                        <input type="radio" name="Product" value="1200 Genesis Crystal" id="x" onclick="clkvp3()">
+                        <input type="radio" name="Product" value="12" id="x" onclick="clkvp3()">
                     </div>
                 </div>
             </div>
@@ -111,7 +107,7 @@
                         <label for="x">
                             <img src="images/gc.png">
                             <p>1500GC 250k</p>
-                            <input type="radio" name="Product" value="1500 Genesis Crystal" id="x" onclick="clkvp4()">
+                            <input type="radio" name="Product" value="13" id="x" onclick="clkvp4()">
                         </label>
                     </div>
                     <div class="col-3 border-pilihan" id="vps1" >
@@ -119,21 +115,21 @@
                             <img src="images/gc.png">
                             <p>2100VP 300K</p>
                         </label>
-                        <input type="radio" name="Product" value="2100 Genesis Crystal" id="x" onclick="clkvp5()">
+                        <input type="radio" name="Product" value="14" id="x" onclick="clkvp5()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpy1" >
                         <label for="x">
                             <img src="images/gc.png">
                             <p>2700VP 350K</p>
                         </label>
-                        <input type="radio" name="Product" value="2700 Genesis Crystal" id="x" onclick="clkvp6()">
+                        <input type="radio" name="Product" value="15" id="x" onclick="clkvp6()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz1" >
                         <label for="x">
                             <img src="images/gc.png">
                             <p>3500VP 400K</p>
                         </label>
-                        <input type="radio" name="Product" value="3500 Genesis Crystal" id="x" onclick="clkvp7()">
+                        <input type="radio" name="Product" value="16" id="x" onclick="clkvp7()">
                     </div>
                 </div>
             </div>

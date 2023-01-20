@@ -1,30 +1,26 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['username'])){
-        $_SESSION['msg'] = 'anda harus login';
-        header('Location: login.php');
-    }
-    require "config.php";
+session_start();
+if (!isset($_SESSION['username'])){
+    $_SESSION['msg'] = 'anda harus login';
+    header('Location: login.php');
+}
+require "config.php";
 
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        $uname = $_POST['nama'];
-        $uid = $_POST['uid'];
-        $item = $_POST['Product'];
-        $payment = $_POST['pay'];
-        $jumlah = '1';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $ign = $_POST['nama'];
+    $uid = $_POST['uid'];
+    $item = $_POST['Product'];
+    $payment = $_POST['pay'];
+    $jumlah = '1';
+    $uname = $_SESSION['username'];
 
-        $sql = "INSERT INTO transaksi SET 
-                username = '$uname',
-                uid = '$uid',
-                item = '$item',
-                payment = '$payment',
-                jumlah = '$jumlah'";
-        $query = mysqli_query($con, $sql);
+    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+    $query = mysqli_query($con, $sql);
 
-        if ($query) header("location:success.php");
+    if ($query) header("location:success.php");
 
-        echo "Something Went Wrong On The Create";
-    }
+    echo "Something Went Wrong On The Create";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,28 +76,28 @@
                             <img src="images/dl.png">
                             <p>250Diamond 40k</p>
                         </label>
-                        <input type="radio" name="Product" value="250 Diamond" id="x" onclick="clkvp()" required>
+                        <input type="radio" name="Product" value="17" id="x" onclick="clkvp()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vps" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>400Diamond 90k</p>
                         </label>
-                        <input type="radio" name="Product" value="400 Diamond" id="x" onclick="clkvp1()" required>
+                        <input type="radio" name="Product" value="18" id="x" onclick="clkvp1()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vpy" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>600Diamond 150k</p>
                         </label>
-                        <input type="radio" name="Product" value="600 Diamond" id="x" onclick="clkvp2()">
+                        <input type="radio" name="Product" value="19" id="x" onclick="clkvp2()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>780Diamond 180k</p>
                         </label>
-                        <input type="radio" name="Product" value="780 Diamond" id="x" onclick="clkvp3()">
+                        <input type="radio" name="Product" value="20" id="x" onclick="clkvp3()">
                     </div>
                 </div>
             </div>
@@ -112,28 +108,28 @@
                             <img src="images/dl.png">
                             <p>1500Diamond 250K</p>
                         </label>
-                        <input type="radio" name="Product" value="1500 Diamond" id="x" onclick="clkvp4()">
+                        <input type="radio" name="Product" value="21" id="x" onclick="clkvp4()">
                     </div>
                     <div class="col-3 border-pilihan" id="vps1" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>2100Diamond 300K</p>
                         </label>
-                        <input type="radio" name="Product" value="2100 Diamond" id="x" onclick="clkvp5()">
+                        <input type="radio" name="Product" value="22" id="x" onclick="clkvp5()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpy1" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>2700Diamond 370K</p>
                         </label>
-                        <input type="radio" name="Product" value="2700 Diamond" id="x" onclick="clkvp6()">
+                        <input type="radio" name="Product" value="23" id="x" onclick="clkvp6()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz1" >
                         <label for="x">
                             <img src="images/dl.png">
                             <p>3500Diamond 400K</p>
                         </label>
-                        <input type="radio" name="Product" value="3500 Diamond" id="x" onclick="clkvp7()">
+                        <input type="radio" name="Product" value="24" id="x" onclick="clkvp7()">
                     </div>
                 </div>
             </div>
@@ -174,7 +170,7 @@
     </div>
 </footer>
 
-<!--<script src="public/assets/backend/myscripts.js"></script>-->
+<script src="myscripts.js"></script>
 
 
 </body>

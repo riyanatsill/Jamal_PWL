@@ -43,21 +43,11 @@ if (isset($_GET['searchBtn'])) {
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css%22%3E">
 </head>
-<body>
+<body style="background-color: #62B6B7">
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #439A97">
         <div class="container-fluid">
-            <a class="navbar-brand" href="logout.php">Logout</a>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#produk">PRODUCT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="profile.php">PROFILE</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand" href="dashboard.php" style="color: black">BACK</a>
         </div>
     </nav>
 </header>
@@ -73,7 +63,6 @@ if (isset($_GET['searchBtn'])) {
             <th>ID Item</th>
             <th>Payment</th>
             <th>Detail</th>
-            <th>Update</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -87,9 +76,8 @@ if (isset($_GET['searchBtn'])) {
                     <td><?= $data['uid'] ?></td>
                     <td><?= $data['id_item'] ?></td>
                     <td><?= $data['payment'] ?></td>
-                    <td><a href="show.php?id=<?= $data['id_tr'] ?>" style="background-color:red" class="btn">Detail</a></td>
-                    <td><a href="update.php?id=<?= $data['id_tr'] ?>" style="background-color:yellow" class="btn">Update</a></td>
-                    <td><a href="delete.php?id=<?= $data['id_tr'] ?>" style="background-color:green" class="btn">Delete</a></td>
+                    <td><a href="show.php?id=<?= $data['id_tr'] ?>" style="background-color:grey" class="btn">Detail</a></td>
+                    <td><a href="delete.php?id=<?= $data['id_tr'] ?>" style="background-color:red" class="btn">Delete</a></td>
                 </tr>
             </form>
         <?php } ?>
@@ -98,7 +86,7 @@ if (isset($_GET['searchBtn'])) {
     <br>
     <ul style="display:flex; justify-content:center;" class="pagination">
         <?php for ($i = 1; $i <= $pages; $i++) { ?>
-            <li class="page-item"><a class="btn btn-dark" href="<?php echo ($i != $page) ? "index.php?page=" . $i : "#" ?>"><?= $i ?></a></li>
+            <li class="page-item"><a class="btn btn-dark" href="<?php echo ($i != $page) ? "history.php?page=" . $i : "#" ?>"><?= $i ?></a></li>
         <?php } ?>
     </ul>
 </div>

@@ -1,30 +1,26 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['username'])){
-        $_SESSION['msg'] = 'anda harus login';
-        header('Location: login.php');
-    }
-    require "config.php";
+session_start();
+if (!isset($_SESSION['username'])){
+    $_SESSION['msg'] = 'anda harus login';
+    header('Location: login.php');
+}
+require "config.php";
 
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        $uname = $_POST['nama'];
-        $uid = $_POST['uid'];
-        $item = $_POST['Product'];
-        $payment = $_POST['pay'];
-        $jumlah = '1';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $ign = $_POST['nama'];
+    $uid = $_POST['uid'];
+    $item = $_POST['Product'];
+    $payment = $_POST['pay'];
+    $jumlah = '1';
+    $uname = $_SESSION['username'];
 
-        $sql = "INSERT INTO transaksi SET 
-                username = '$uname',
-                uid = '$uid',
-                item = '$item',
-                payment = '$payment',
-                jumlah = '$jumlah'";
-        $query = mysqli_query($con, $sql);
+    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+    $query = mysqli_query($con, $sql);
 
-        if ($query) header("location:success.php");
+    if ($query) header("location:success.php");
 
-        echo "Something Went Wrong On The Create";
-    }
+    echo "Something Went Wrong On The Create";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,28 +76,28 @@
                             <img src="images/uc1.png">
                             <p>500UC 100k</p>
                         </label>
-                        <input type="radio" name="Product" value="500 UC" id="x" onclick="clkvp()" required>
+                        <input type="radio" name="Product" value="25" id="x" onclick="clkvp()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vps" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>750UC 200k</p>
                         </label>
-                        <input type="radio" name="Product" value="750 UC" id="x" onclick="clkvp1()" required>
+                        <input type="radio" name="Product" value="26" id="x" onclick="clkvp1()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vpy" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>1000UC 270k</p>
                         </label>
-                        <input type="radio" name="Product" value="1000 UC" id="x" onclick="clkvp2()">
+                        <input type="radio" name="Product" value="27" id="x" onclick="clkvp2()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>1200UC 300k</p>
                         </label>
-                        <input type="radio" name="Product" value="1200 UC" id="x" onclick="clkvp3()">
+                        <input type="radio" name="Product" value="28" id="x" onclick="clkvp3()">
                     </div>
                 </div>
             </div>
@@ -112,28 +108,28 @@
                             <img src="images/uc1.png">
                             <p>1500UC 370K</p>
                         </label>
-                        <input type="radio" name="Product" value="1500 UC" id="x" onclick="clkvp4()">
+                        <input type="radio" name="Product" value="29" id="x" onclick="clkvp4()">
                     </div>
                     <div class="col-3 border-pilihan" id="vps1" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>2100UC 400K</p>
                         </label>
-                        <input type="radio" name="Product" value="2100 UC" id="x" onclick="clkvp5()">
+                        <input type="radio" name="Product" value="30" id="x" onclick="clkvp5()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpy1" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>2700UC 450K</p>
                         </label>
-                        <input type="radio" name="Product" value="2700 UC" id="x" onclick="clkvp6()">
+                        <input type="radio" name="Product" value="31" id="x" onclick="clkvp6()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz1" >
                         <label for="x">
                             <img src="images/uc1.png">
                             <p>3500UC 500K</p>
                         </label>
-                        <input type="radio" name="Product" value="3500 UC" id="x" onclick="clkvp7()">
+                        <input type="radio" name="Product" value="32" id="x" onclick="clkvp7()">
                     </div>
                 </div>
             </div>
@@ -174,7 +170,7 @@
     </div>
 </footer>
 
-<!--<script src="public/assets/backend/myscripts.js"></script>-->
+<script src="myscripts.js"></script>
 
 
 </body>

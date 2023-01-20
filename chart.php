@@ -1,4 +1,12 @@
 <?php
+include('config.php');
+$produk = mysqli_query($con, "SELECT * from item"); //query mengambil data di tabel transaction
+while ($row = mysqli_fetch_array($produk)){ //extract data hasil query di baris 3 dan datanya disimpan di variabel row
+    $nama_produk[] = $row['nama_item'];
+    $query = mysqli_query($con, "SELECT sum(jumlah) AS jumlah FROM transaksi where id_item='".$row['id_item']."'");
+    $row = $query->fetch_array();
+    $jumlah_produk[] = $row['jumlah'];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,63 +17,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BAR</title>
     <link rel="icon" type="image" sizes="32x32" href="images/favicon-32x32.png"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/tambahan.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/carousel.rtl.css" rel="stylesheet">
 </head>
 <body>
 <header>
-    <a class="title">JAMALGAMING</a>
-    <nav>
-        <ul>
-            <p><a href = "dashboard.php">HOME</a></p>
-        </ul>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #439A97">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.php" style="color: black">BACK</a>
+        </div>
     </nav>
 </header>
-
-<div class="row">
-    <div class="col-12">
-        <div>
-            <canvas id="myChart" style="height:40vh; width:70vw; margin:0 auto"></canvas>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            var ctx = document.getElementById("myChart").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: <?php echo json_encode($nama_produk); ?>,
-                    datasets: [{
-                        label: 'Grafik Penjualan',
-                        data: <?php echo json_encode($jumlah_produk); ?>,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                option: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>
-    </div>
+<hr class="featurette-divider">
+<div>
+    <canvas id="myChart" style="height:40vh; width:70vw; margin:0 auto"></canvas>
 </div>
 
-<footer>
-    <div class="contact">
-        <h1>SOCIAL MEDIA</h1>
-        <a href = "https://www.instagram.com/jamal_gaming22/" ><img src="images/ig.png" alt=""/></a>
-        <a href = "https://wa.me/6287884541593" ><img src="images/WA2.png" alt=""/></a>
-    </div>
-</footer>
-<!--<div id="copyright">-->
-<!--    &copy;2022 JAMALGAMING-->
-<!--</div>-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext("2d");
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: <?php echo json_encode($nama_produk); ?>,
+            datasets: [{
+                label: 'Grafik Penjualan',
+                data: <?php echo json_encode($jumlah_produk); ?>,
+                borderWidth: 1
+            }]
+        },
+        option: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
