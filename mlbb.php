@@ -5,6 +5,14 @@ if (!isset($_SESSION['username'])){
     header('Location: login.php');
 }
 require "config.php";
+    $user = $_SESSION['username'];
+    $sql = "SELECT * from users where username = '$user'";
+    $query = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['level'] == 'admin'){
+        header('Location:dashboard.php');
+    }
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $ign = $_POST['nama'];
@@ -14,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $jumlah = '1';
     $uname = $_SESSION['username'];
 
-    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',
+                id_item = '$item', payment = '$payment', jumlah = '$jumlah', tdate = NOW()";
     $query = mysqli_query($con, $sql);
 
     if ($query) header("location:success.php");
@@ -74,28 +83,28 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     <div class="col-3 border-pilihan" id="vpx">
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>250Diamond 40k</p>
+                            <p>250 Diamonds 40k</p>
                         </label>
                         <input type="radio" name="Product" value="17" id="x" onclick="clkvp()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vps" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>400Diamond 90k</p>
+                            <p>400 Diamonds 90k</p>
                         </label>
                         <input type="radio" name="Product" value="18" id="x" onclick="clkvp1()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vpy" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>600Diamond 150k</p>
+                            <p>600 Diamonds 150k</p>
                         </label>
                         <input type="radio" name="Product" value="19" id="x" onclick="clkvp2()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>780Diamond 180k</p>
+                            <p>780 Diamonds 180k</p>
                         </label>
                         <input type="radio" name="Product" value="20" id="x" onclick="clkvp3()">
                     </div>
@@ -106,28 +115,28 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     <div class="col-3 border-pilihan" id="vpx1" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>1500Diamond 250K</p>
+                            <p>1500 Diamonds 250K</p>
                         </label>
                         <input type="radio" name="Product" value="21" id="x" onclick="clkvp4()">
                     </div>
                     <div class="col-3 border-pilihan" id="vps1" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>2100Diamond 300K</p>
+                            <p>2100 Diamonds 300K</p>
                         </label>
                         <input type="radio" name="Product" value="22" id="x" onclick="clkvp5()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpy1" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>2700Diamond 370K</p>
+                            <p>2700 Diamonds 370K</p>
                         </label>
                         <input type="radio" name="Product" value="23" id="x" onclick="clkvp6()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz1" >
                         <label for="x">
                             <img src="images/dl.png">
-                            <p>3500Diamond 400K</p>
+                            <p>3500 Diamonds 400K</p>
                         </label>
                         <input type="radio" name="Product" value="24" id="x" onclick="clkvp7()">
                     </div>
@@ -170,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     </div>
 </footer>
 
-<script src="myscripts.js"></script>
+<script src="myscript.js"></script>
 
 
 </body>

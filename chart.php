@@ -1,5 +1,18 @@
 <?php
-include('config.php');
+session_start();
+if (!isset($_SESSION['username'])){
+    $_SESSION['msg'] = 'anda harus login';
+    header('Location: login.php');
+}
+require "config.php";
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'user'){
+    header('Location:home.php');
+}
 $produk = mysqli_query($con, "SELECT * from item"); //query mengambil data di tabel transaction
 while ($row = mysqli_fetch_array($produk)){ //extract data hasil query di baris 3 dan datanya disimpan di variabel row
     $nama_produk[] = $row['nama_item'];

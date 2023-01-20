@@ -1,9 +1,18 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])){
-    $_SESSION['msg'] = 'anda harus login';
-    header('Location: login.php');
-}
+    session_start();
+    if (!isset($_SESSION['username'])){
+        $_SESSION['msg'] = 'anda harus login';
+        header('Location: login.php');
+    }
+    require "config.php";
+    $user = $_SESSION['username'];
+    $sql = "SELECT * from users where username = '$user'";
+    $query = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['level'] == 'admin'){
+        header('Location:dashboard.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,6 +42,9 @@ if (!isset($_SESSION['username'])){
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="profile.php" style="color: black">PROFILE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="userhistory.php" style="color: black">HISTORY</a>
                     </li>
                 </ul>
             </div>

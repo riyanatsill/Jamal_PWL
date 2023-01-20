@@ -4,8 +4,15 @@ if (!isset($_SESSION['username'])){
     $_SESSION['msg'] = 'anda harus login';
     header('Location: login.php');
 }
-
 require "config.php";
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'admin'){
+    header('Location:home.php');
+}
 $uname = $_SESSION['username'];
 $sql = "SELECT * FROM users WHERE username = '$uname'";
 $query = mysqli_query($con, $sql);

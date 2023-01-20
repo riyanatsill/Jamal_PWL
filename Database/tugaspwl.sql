@@ -84,6 +84,7 @@ CREATE TABLE `transaksi` (
   `uid` varchar(255) NOT NULL,
   `id_item` int(11) NOT NULL,
   `payment` varchar(20) NOT NULL,
+  `date` date NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

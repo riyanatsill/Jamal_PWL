@@ -5,6 +5,14 @@
         header('Location: login.php');
     }
     require "config.php";
+    $user = $_SESSION['username'];
+    $sql = "SELECT * from users where username = '$user'";
+    $query = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['level'] == 'admin'){
+        header('Location:dashboard.php');
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $ign = $_POST['nama'];
@@ -14,7 +22,8 @@
         $jumlah = '1';
         $uname = $_SESSION['username'];
 
-        $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+        $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',
+                id_item = '$item', payment = '$payment', jumlah = '$jumlah', tdate = NOW()";
         $query = mysqli_query($con, $sql);
 
         if ($query) header("location:success.php");
@@ -166,7 +175,7 @@
 </form>
 
 
-<script src="myscripts.js"></script>
+<script src="myscript.js"></script>
 <footer>
     <div class="contact">
         <h1>SOCIAL MEDIA</h1>
