@@ -5,14 +5,14 @@ if (!isset($_SESSION['username'])){
     header('Location: login.php');
 }
 require "config.php";
-    $user = $_SESSION['username'];
-    $sql = "SELECT * from users where username = '$user'";
-    $query = mysqli_query($con, $sql);
-    $data = mysqli_fetch_assoc($query);
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
 
-    if($data['level'] == 'admin'){
-        header('Location:dashboard.php');
-    }
+if($dataUsers['level'] == 'admin'){
+    header('Location:dashboard.php');
+}
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $ign = $_POST['nama'];

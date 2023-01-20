@@ -11,7 +11,7 @@ $queryUsers = mysqli_query($con, $sql);
 $dataUsers = mysqli_fetch_assoc($queryUsers);
 
 if($dataUsers['level'] == 'admin'){
-    header('Location:home.php');
+    header('Location:dashboard.php');
 }
 
 $uname = $_SESSION['username'];

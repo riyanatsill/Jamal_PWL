@@ -10,8 +10,8 @@ $sql = "SELECT * from users where username = '$user'";
 $queryUsers = mysqli_query($con, $sql);
 $dataUsers = mysqli_fetch_assoc($queryUsers);
 
-if($dataUsers['level'] == 'user'){
-    header('Location:home.php');
+if($dataUsers['level'] == 'admin'){
+    header('Location:dashboard.php');
 }
 ?>
 <!doctype html>

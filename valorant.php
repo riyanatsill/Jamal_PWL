@@ -7,12 +7,12 @@
     require "config.php";
     $user = $_SESSION['username'];
     $sql = "SELECT * from users where username = '$user'";
-    $query = mysqli_query($con, $sql);
-    $data = mysqli_fetch_assoc($query);
+    $queryUsers = mysqli_query($con, $sql);
+    $dataUsers = mysqli_fetch_assoc($queryUsers);
 
-    if($data['level'] == 'admin'){
+    if($dataUsers['level'] == 'admin'){
         header('Location:dashboard.php');
-    }
+}
 
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $ign = $_POST['nama'];
