@@ -37,32 +37,27 @@ $admin = $_SESSION['username'];
 <hr class="featurette-divider">
 <main>
     <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-lg-6">
                 <img src="images/history.png" width="140" height="140">
                 <h2 class="fw-normal">HISTORY</h2>
                 <p><a class="btn btn-secondary" href="history.php">CHECK</a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-6">
                 <img src="images/u.png" width="140" height="140">
                 <h2 class="fw-normal">CHART</h2>
                 <p><a class="btn btn-secondary" href="chart.php">CHECK</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+            </div>
+        </div>
         <hr class="featurette-divider">
-    <!-- FOOTER -->
     <footer class="container">
         <p class="float-end"><a href="#">Back to top</a></p>
         <p>&copy; 2022 JAMALGAMING</a></p>
     </footer>
 </main>
 
-
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-
 
 </body>
 </html>

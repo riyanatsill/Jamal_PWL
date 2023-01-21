@@ -41,7 +41,6 @@ if (!isset($_SESSION['username'])){
 </header>
 
 <body style="background-color: #62B6B7">
-
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -81,25 +80,18 @@ if (!isset($_SESSION['username'])){
         </button>
     </div>
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing" style="color: black">
-
-        <!-- Three columns of text below the carousel -->
         <div class="row" id="produk">
             <div class="col-lg-6">
                 <img src="images/valorant.jpg" width="140" height="140">
                 <h2 class="fw-normal">VALORANT</h2>
                 <p><a class="btn btn-secondary" href="valorant.php">TOP-UP </a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-6">
                 <img src="images/GenshinImpact.jpg" width="140" height="140">
                 <h2 class="fw-normal">GENSHIN IMPACT</h2>
                 <p><a class="btn btn-secondary" href="genshin.php">TOP-UP </a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-6">
                 <img src="images/mlbb.jpg" width="140" height="140">
                 <h2 class="fw-normal">MOBILE LEGEND</h2>
@@ -109,19 +101,16 @@ if (!isset($_SESSION['username'])){
                 <img src="images/pubgm.jpg" width="140" height="140">
                 <h2 class="fw-normal">PUBG MOBILE</h2>
                 <p><a class="btn btn-secondary" href="pubgm.php">TOP-UP</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+            </div>
+        </div>
         <hr class="featurette-divider">
-        <!-- FOOTER -->
         <footer class="container">
-            <p>&copy; 2022 JAMALGAMING</a></p>
+            <p style="text-align: center">&copy; 2022 JAMALGAMING</a></p>
         </footer>
 </body>
 
-
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-
 
 </body>
 </html>

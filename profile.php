@@ -31,32 +31,6 @@ if(isset($_POST['submit'])){
         echo "Something Went Wrong On The Update";
     }
 }
-
-
-
-// $uname = $_SESSION['username'];
-// $sql = "SELECT * FROM users WHERE username = '$uname'";
-// $query = mysqli_query($con, $sql);
-// $data = mysqli_fetch_assoc($query);
-// $id = $data['id'];
-
-// if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
-//     extract($_REQUEST);
-//     $data	=	array(
-//                     'email'=>$email,
-//                     'username'=>$username,
-//                     'password'=>$password,
-//                     );
-//     $update	=	$db->update('users',$data,array('id'=>$id));
-//     if($update){
-//         header('location: browse-users.php?msg=rus');
-//         exit;
-//     }else{
-//         header('location: browse-users.php?msg=rnu');
-//         exit;
-//     }
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,8 +43,6 @@ if(isset($_POST['submit'])){
 <body>
 <header>
     <a class="title">JAMALGAMING</a>
-    <!--input type="search" name="" id="" class="input-search" placeholder="What Are You Looking For...">
-    <button type="submit" class="input-submit">search</button-->
     <nav>
         <ul>
             <p><a href="home.php">HOME</a></p>
