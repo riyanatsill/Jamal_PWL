@@ -4,8 +4,15 @@ if (!isset($_SESSION['username'])){
     $_SESSION['msg'] = 'anda harus login';
     header('Location: login.php');
 }
-
 require "config.php";
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'admin'){
+    header('Location:home.php');
+}
 $uname = $_SESSION['username'];
 $sql = "SELECT * FROM users WHERE username = '$uname'";
 $query = mysqli_query($con, $sql);
@@ -73,7 +80,7 @@ if(isset($_POST['submit'])){
                 <input type="password" name="repassword" class="input-submit" id="floatingInput" placeholder="Retype New Password">
                 <label for="floatingInput"></label>
             </div>
-            <button style="padding: 1%; border-radius: 5px 5px 5px 5px; width: 10%;" type="submit" name="submit">UPDATE</button>
+            <button style="padding: 1%; border-radius: 5px 5px 5px 5px; width: 10%;" type="submit" name="submit" onclick="return  confirm('Yakin Ingin Mengganti Password ?')">UPDATE</button>
         </div>
     </form>
 </div>

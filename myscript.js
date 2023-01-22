@@ -28,17 +28,17 @@ function clkvp() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpx1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
-        document.getElementById("vpz").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
 
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    // }
 }
 
 
@@ -72,17 +72,17 @@ function clkvp1() {
     document.getElementById("vpx1").style.backgroundColor = "#008080";
     document.getElementById("vps1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    // }
 
 }
 
@@ -116,17 +116,17 @@ function clkvp2() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpy1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    // }
 }
 
 //vp4
@@ -159,17 +159,17 @@ function clkvp3() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpz1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    // }
 }
 
 //vp5
@@ -202,17 +202,17 @@ function clkvp4() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpz1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    // }
 }
 
 //vp6
@@ -245,17 +245,17 @@ function clkvp5() {
     document.getElementById("vps").style.backgroundColor = "#008080";
     document.getElementById("vpz1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    // }
 }
 
 //vp7
@@ -288,17 +288,17 @@ function clkvp6() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpz1").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    // }
 }
 
 //vp8
@@ -331,17 +331,17 @@ function clkvp7() {
     document.getElementById("vps1").style.backgroundColor = "#008080";
     document.getElementById("vpz").style.backgroundColor = "#008080";
 
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("vpz").style.backgroundColor = "#008080";
-        document.getElementById("vpx").style.backgroundColor = "#008080";
-        document.getElementById("vps").style.backgroundColor = "#008080";
-        document.getElementById("vpy").style.backgroundColor = "#008080";
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("vpz").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx").style.backgroundColor = "#008080";
+    //     document.getElementById("vps").style.backgroundColor = "#008080";
+    //     document.getElementById("vpy").style.backgroundColor = "#008080";
 
-        document.getElementById("vpy1").style.backgroundColor = "#008080";
-        document.getElementById("vpx1").style.backgroundColor = "#008080";
-        document.getElementById("vps1").style.backgroundColor = "#008080";
-        document.getElementById("vpz1").style.backgroundColor = "#008080";
-    }
+    //     document.getElementById("vpy1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpx1").style.backgroundColor = "#008080";
+    //     document.getElementById("vps1").style.backgroundColor = "#008080";
+    //     document.getElementById("vpz1").style.backgroundColor = "#008080";
+    // }
 }
 
 //payment bca
@@ -353,10 +353,10 @@ function bca() {
 
     document.getElementById("bcaa").style.backgroundColor = "rgb(139, 192, 253)";
     document.getElementById("gopayy").style.backgroundColor = "aliceblue"
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("bcaa").style.backgroundColor = "aliceblue";
-        document.getElementById("gopayy").style.backgroundColor = "aliceblue";
-    }
+        // if (bg == "rgb(139, 192, 253)") {
+        //     document.getElementById("bcaa").style.backgroundColor = "aliceblue";
+        //     document.getElementById("gopayy").style.backgroundColor = "aliceblue";
+        // }
 }
 
 //payment gopay
@@ -368,8 +368,8 @@ function gopay() {
 
     document.getElementById("gopayy").style.backgroundColor = "rgb(139, 192, 253)";
     document.getElementById("bcaa").style.backgroundColor = "aliceblue";
-    if (bg == "rgb(139, 192, 253)") {
-        document.getElementById("bcaa").style.backgroundColor = "aliceblue";
-        document.getElementById("gopayy").style.backgroundColor = "aliceblue";
-    }
+    // if (bg == "rgb(139, 192, 253)") {
+    //     document.getElementById("bcaa").style.backgroundColor = "aliceblue";
+    //     document.getElementById("gopayy").style.backgroundColor = "aliceblue";
+    // }
 }

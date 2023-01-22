@@ -1,21 +1,18 @@
-<!doctype html>
-<html lang="`en`">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/tambahan.css" />
-    <link rel="icon" type="image" sizes="32x32" href="images/favicon-32x32.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="css/sign-in.css" rel="stylesheet">
-</head>
-<body class="text-center" style="background-color: #62B6B7">
 <?php
-require ('config.php');
 session_start();
+require ('config.php');
+if (isset($_SESSION['username'])){
+    $user = $_SESSION['username'];
+    $sql = "SELECT * from users where username = '$user'";
+    $queryUsers = mysqli_query($con, $sql);
+    $dataUsers = mysqli_fetch_assoc($queryUsers);
+    if($dataUsers['level'] == 'admin'){
+        header('Location:dashboard.php');
+    }else if($dataUsers['level'] == 'user'){
+        header('Location:home.php');
+    }
+}
+
 
 $error = '';
 $validate = '';
@@ -59,7 +56,21 @@ function cek_email($email,$con){
     if ($result = mysqli_query($con,$query)) return mysqli_num_rows($result);
 }
 ?>
-
+<!doctype html>
+<html lang="`en`">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/tambahan.css" />
+    <link rel="icon" type="image" sizes="32x32" href="images/favicon-32x32.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css/sign-in.css" rel="stylesheet">
+</head>
+<body class="text-center" style="background-color: #62B6B7">
 <main class="form-signin w-100 m-auto">
     <form action="register.php" method="POST">
         <img class="mb-4" src="images/android-chrome-192x192.png" alt="" width="72" height="57">

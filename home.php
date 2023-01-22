@@ -1,9 +1,18 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])){
-    $_SESSION['msg'] = 'anda harus login';
-    header('Location: login.php');
-}
+    session_start();
+    if (!isset($_SESSION['username'])){
+        $_SESSION['msg'] = 'anda harus login';
+        header('Location: login.php');
+    }
+    require "config.php";
+    $user = $_SESSION['username'];
+    $sql = "SELECT * from users where username = '$user'";
+    $query = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($query);
+
+    if($data['level'] == 'admin'){
+        header('Location:dashboard.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,6 +43,9 @@ if (!isset($_SESSION['username'])){
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="profile.php" style="color: black">PROFILE</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="userhistory.php" style="color: black">HISTORY</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,12 +54,6 @@ if (!isset($_SESSION['username'])){
 
 <body style="background-color: #62B6B7">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="images/valorant1.jpg" width="100%" height="100%" class="bd-placeholder-img">

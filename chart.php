@@ -1,7 +1,20 @@
 <?php
-include('config.php');
-$produk = mysqli_query($con, "SELECT * from item");
-while ($row = mysqli_fetch_array($produk)){
+session_start();
+if (!isset($_SESSION['username'])){
+    $_SESSION['msg'] = 'anda harus login';
+    header('Location: login.php');
+}
+require "config.php";
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'user'){
+    header('Location:home.php');
+}
+$produk = mysqli_query($con, "SELECT * from item"); //query mengambil data di tabel transaction
+while ($row = mysqli_fetch_array($produk)){ //extract data hasil query di baris 3 dan datanya disimpan di variabel row
     $nama_produk[] = $row['nama_item'];
     $query = mysqli_query($con, "SELECT sum(jumlah) AS jumlah FROM transaksi where id_item='".$row['id_item']."'");
     $row = $query->fetch_array();
@@ -15,7 +28,7 @@ while ($row = mysqli_fetch_array($produk)){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Grafik Penjualan</title>
+    <title>BAR</title>
     <link rel="icon" type="image" sizes="32x32" href="images/favicon-32x32.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="css/carousel.css" rel="stylesheet">

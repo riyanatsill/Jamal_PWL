@@ -1,26 +1,36 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])){
-    $_SESSION['msg'] = 'anda harus login';
-    header('Location: login.php');
+    session_start();
+    if (!isset($_SESSION['username'])){
+        $_SESSION['msg'] = 'anda harus login';
+        header('Location: login.php');
+    }
+    require "config.php";
+
+    $user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'admin'){
+    header('Location:dashboard.php');
 }
-require "config.php";
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $ign = $_POST['nama'];
-    $uid = $_POST['uid'];
-    $item = $_POST['Product'];
-    $payment = $_POST['pay'];
-    $jumlah = '1';
-    $uname = $_SESSION['username'];
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        $ign = $_POST['nama'];
+        $uid = $_POST['uid'];
+        $item = $_POST['Product'];
+        $payment = $_POST['pay'];
+        $jumlah = '1';
+        $uname = $_SESSION['username'];
 
-    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
-    $query = mysqli_query($con, $sql);
+        $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',
+                id_item = '$item', payment = '$payment', jumlah = '$jumlah', tdate = NOW()";
+        $query = mysqli_query($con, $sql);
 
-    if ($query) header("location:success.php");
+        if ($query) header("location:success.php");
 
-    echo "Something Went Wrong On The Create";
-}
+        echo "Something Went Wrong On The Create";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,28 +84,30 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     <div class="col-3 border-pilihan" id="vpx">
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>250GC 20k</p>
+                            <p>250 Genesis Crystals</p>
+                            <p>20k</p>
                         </label>
                         <input type="radio" name="Product" value="9" id="x" onclick="clkvp()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vps" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>500GC 50k</p>
+                            <p>500 Genesis Crystals</p>
+                            <p>50k</p>
                         </label>
                         <input type="radio" name="Product" value="10" id="x" onclick="clkvp1()" required>
                     </div>
                     <div class="col-3 border-pilihan" id="vpy" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>1000GC 150k</p>
+                            <p>1000 Genesis Crystals 150k</p>
                         </label>
                         <input type="radio" name="Product" value="11" id="x" onclick="clkvp2()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>1200GC 200k</p>
+                            <p>1200 Genesis Crystals 200k</p>
                         </label>
                         <input type="radio" name="Product" value="12" id="x" onclick="clkvp3()">
                     </div>
@@ -106,28 +118,28 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     <div class="col-3 border-pilihan" id="vpx1" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>1500GC 250k</p>
+                            <p>1500 Genesis Crystals 250k</p>
                             <input type="radio" name="Product" value="13" id="x" onclick="clkvp4()">
                         </label>
                     </div>
                     <div class="col-3 border-pilihan" id="vps1" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>2100VP 300K</p>
+                            <p>2100 Genesis Crystals 300K</p>
                         </label>
                         <input type="radio" name="Product" value="14" id="x" onclick="clkvp5()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpy1" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>2700VP 350K</p>
+                            <p>2700 Genesis Crystals 350K</p>
                         </label>
                         <input type="radio" name="Product" value="15" id="x" onclick="clkvp6()">
                     </div>
                     <div class="col-3 border-pilihan" id="vpz1" >
                         <label for="x">
                             <img src="images/gc.png">
-                            <p>3500VP 400K</p>
+                            <p>3500 Genesis Crystals 400K</p>
                         </label>
                         <input type="radio" name="Product" value="16" id="x" onclick="clkvp7()">
                     </div>
@@ -156,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <input type="radio" name="pay" value="gopay" id="b" onclick="gopay()">
                     </div>
                 </div>
-                <button type="submit" class="input-submit" >submit</button>
+                <button type="submit" class="input-submit" onclick="return  confirm('Yakin Ingin Melakukan Submit ?')">submit</button>
             </div>
         </div>
     </div>

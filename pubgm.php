@@ -5,6 +5,14 @@ if (!isset($_SESSION['username'])){
     header('Location: login.php');
 }
 require "config.php";
+$user = $_SESSION['username'];
+$sql = "SELECT * from users where username = '$user'";
+$queryUsers = mysqli_query($con, $sql);
+$dataUsers = mysqli_fetch_assoc($queryUsers);
+
+if($dataUsers['level'] == 'admin'){
+    header('Location:dashboard.php');
+}
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $ign = $_POST['nama'];
@@ -14,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $jumlah = '1';
     $uname = $_SESSION['username'];
 
-    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',id_item = '$item', payment = '$payment', jumlah = '$jumlah'";
+    $sql = "INSERT INTO transaksi SET username = '$uname', ign = '$ign', uid = '$uid',
+                id_item = '$item', payment = '$payment', jumlah = '$jumlah', tdate = NOW()";
     $query = mysqli_query($con, $sql);
 
     if ($query) header("location:success.php");
@@ -156,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <input type="radio" name="pay" value="gopay" id="b" onclick="gopay()">
                     </div>
                 </div>
-                <button type="submit" class="input-submit" >submit</button>
+                <button type="submit" class="input-submit" onclick="return  confirm('Yakin Ingin Melakukan Submit ?')" >submit</button>
             </div>
         </div>
     </div>
@@ -170,6 +179,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     </div>
 </footer>
 
+<<<<<<< HEAD
 <script src="myscripts.js"></script>
+=======
+<script src="myscript.js"></script>
+
+
+>>>>>>> 3852f672c98f58e5585b9d9162581f11b1123300
 </body>
 </html>

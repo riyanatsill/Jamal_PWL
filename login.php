@@ -18,7 +18,7 @@ if (isset($_POST['submit'])){
         $data = mysqli_fetch_assoc($result);
         if ($rows != 0){
             $hash = $data['password'];
-            if (password_verify($password, $hash) && $_SESSION['code'] == $_POST['kodecaptcha']){
+            if (password_verify($password, $hash) ){
                 if($data['level'] == 'admin'){
                     $_SESSION['username'] = $username;
                     header('Location: dashboard.php');
